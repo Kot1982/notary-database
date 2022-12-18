@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const { DB_HOST, PORT = 4000 } = process.env;
+const { DB_HOST, PORT } = process.env;
 
 mongoose.set("strictQuery", false);
 
@@ -13,7 +13,7 @@ mongoose
   .then(() => {
     console.log("DB is connect");
     app.listen(PORT, () => {
-      console.log(`Server is running. Use our API on port: ${4000}`);
+      console.log(`Server is running. Use our API on port: ${PORT}`);
     });
   })
   .catch((error) => {
